@@ -24,6 +24,24 @@ namespace JIWebPictureDemo.Models
         [Display(Name = "Mobile:")]
         public string Mobile { get; set; }
 
+        [Display(Name = "Telephone:")]
+        public string Telephone { get; set; }
+
+        [Display(Name = "Address 1:")]
+        public string Address1 { get; set; }
+
+        [Display(Name = "Address 2:")]
+        public string Address2 { get; set; }
+
+        [Display(Name = "City:")]
+        public string City { get; set; }
+
+        [Display(Name = "County:")]
+        public string County { get; set; }
+
+        [Display(Name = "Post Code:")]
+        public string PostCode { get; set; }
+
         [Display(Name = "Notes:")]
         public string Notes { get; set; }
     }

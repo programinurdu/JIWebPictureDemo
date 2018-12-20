@@ -17,8 +17,8 @@ namespace JIWebPictureDemo.Models
         [Required(ErrorMessage = "Full Name is required.")]
         public string FullName { get; set; }
 
-        [Display(Name = "Email:")]
-        [Required(ErrorMessage = "Email is required.")]
+        [Display(Name = "Email Address:")]
+        [Required(ErrorMessage = "Email Address is required.")]
         public string Email { get; set; }
 
         [Display(Name = "Mobile:")]
@@ -34,15 +34,18 @@ namespace JIWebPictureDemo.Models
         public string Address2 { get; set; }
 
         [Display(Name = "City:")]
-        public string City { get; set; }
+        [UIHint("CityComboBox")]
+        public int City { get; set; }
 
         [Display(Name = "County:")]
-        public string County { get; set; }
+        [UIHint("CountyComboBox")]
+        public int County { get; set; }
 
         [Display(Name = "Post Code:")]
         public string PostCode { get; set; }
 
         [Display(Name = "Notes:")]
+        [DataType(DataType.MultilineText)]
         public string Notes { get; set; }
     }
 }

@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<script type="text/javascript">
+@*<script type="text/javascript">
     //function OnBegin() {
     //    $('progress').show();
     //}
@@ -16,7 +16,7 @@
     function OnFailure(response) {
         $('progress').hide();
     }
-</script>
+</script>*@
 
 
 @*@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
@@ -24,9 +24,9 @@
 {
     OnSuccess = "OnSuccess",
     OnFailure = "OnFailure"
-    @*, OnBegin="OnBegin"*@,
+    @*, OnBegin="OnBegin",*@
     @*UpdateTargetId = "successmsg",*@
-    LoadingElementId = "progress"
+    //LoadingElementId = "progress"
 }, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -37,8 +37,8 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="row">
-                    <div class ="col-md-12">
-                        <br/> <br/>
+                    <div class="col-md-12">
+                        <br /> <br />
                         <a href="" onclick="ChangePicture(); return false">
                             <img id="image" src="~/Images/not-available.jpg" alt="" class="img-rounded img-border" width="160" height="160" />
                         </a>
@@ -147,7 +147,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })
-                            @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control", @style = "max-width: 82%; height: 150px;" } })
                             @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -163,24 +163,24 @@
                 </div>
 
             </div>
-        </div> 
-     </div>
+        </div>
+    </div>
 }
 
 
 
 @*<div id="successmsg">
-    @if (ViewBag.Message != null)
-    {
-        <div class="alert alert-success alert-dismissable">
-            @ViewBag.Message
-            <a href="#" class="close" data-dismiss="alert">x</a>
-        </div>
-    }
-</div>*@
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success alert-dismissable">
+                @ViewBag.Message
+                <a href="#" class="close" data-dismiss="alert">x</a>
+            </div>
+        }
+    </div>*@
 
-<div id="progress" class="modal">
+@*<div id="progress" class="modal">
     <div class="center">
         <img class="loading-image" src="~/Images/loader.gif" />
     </div>
-</div>
+</div>*@

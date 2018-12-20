@@ -127,6 +127,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\StudentList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CityComboBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CountyComboBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GenderComboBox.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -9,28 +9,29 @@
 <p>
     @Html.ActionLink("Create New", "Index")
 </p>
-<table class="table table-striped table-hover">
-    <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.PhotoSource)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mobile)
-        </th>
-        <th></th>
-    </tr>
-
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr class="success">
+            <th>
+                <b>Student Id</b>
+            </th>
+            <th>
+                <b>Full Name</b>
+            </th>
+            <th>
+                <b>Email</b>
+            </th>
+            <th>
+                <b>Mobile</b>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 @foreach (var item in Model) {
     <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.PhotoSource)
-        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentId)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.FullName)
         </td>
@@ -39,9 +40,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Mobile)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
         </td>
     </tr>
 }

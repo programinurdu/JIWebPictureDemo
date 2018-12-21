@@ -1,9 +1,6 @@
 ﻿using JIWebPictureDemo.Models;
 using JIWebPictureDemo.ViewModels.Students;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,7 +11,10 @@ namespace JIWebPictureDemo.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            StudentViewModel svm = new StudentViewModel();
+            Student student = new Student();
+            student.StudentId = svm.GenerateStudentId();
+            return View(student);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
@@ -33,6 +33,8 @@ namespace JIWebPictureDemo.Controllers
                 svm.InsertStudentInfo(student);
 
                 ViewBag.Message = "Student Details are saved successfully.";
+
+                return PartialView("~/Views/Shared/PartialPages/Message.cshtml");
             }
 
             return View(student);

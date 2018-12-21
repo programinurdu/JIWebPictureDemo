@@ -1,1 +1,4 @@
-﻿@* Coming Soon *@
+﻿@using JIWebPictureDemo.ViewModels.Students
+@using JIWebPictureDemo.Models.General
+
+@Html.DropDownList("", (List<SelectListItem>)ComboBoxData.GetListData(ListType.County), string.Empty, new { @class = "form-control" })

@@ -72,11 +72,13 @@ namespace JIWebPictureDemo.ViewModels.Students
 
                     while(reader.Read())
                     {
-                        Student std = new Student();
-                        std.StudentId = Convert.ToInt32(reader["StudentId"]);
-                        std.FullName = reader["FullName"].ToString();
-                        std.Email = reader["Email"].ToString();
-                        std.Mobile = reader["Mobile"].ToString();
+                        Student std = new Student
+                        {
+                            StudentId = Convert.ToInt32(reader["StudentId"]),
+                            FullName = reader["FullName"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            Mobile = reader["Mobile"].ToString()
+                        };
 
                         students.Add(std);
                     }

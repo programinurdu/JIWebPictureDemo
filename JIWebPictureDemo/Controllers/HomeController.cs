@@ -12,8 +12,10 @@ namespace JIWebPictureDemo.Controllers
         public ActionResult Index()
         {
             StudentViewModel svm = new StudentViewModel();
-            Student student = new Student();
-            student.StudentId = svm.GenerateStudentId();
+            Student student = new Student
+            {
+                StudentId = svm.GenerateStudentId()
+            };
             return View(student);
         }
 
@@ -37,7 +39,7 @@ namespace JIWebPictureDemo.Controllers
                 return PartialView("~/Views/Shared/PartialPages/Message.cshtml");
             }
 
-            return View(student);
+            return PartialView(student);
         }
 
         [HttpGet]

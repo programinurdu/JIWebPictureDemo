@@ -22,7 +22,6 @@ namespace JIWebPictureDemo.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Index(Student student, HttpPostedFileBase file)
         {
-
             if (ModelState.IsValid)
             {
                 if (file != null && file.ContentLength > 0)
@@ -34,12 +33,15 @@ namespace JIWebPictureDemo.Controllers
                 StudentViewModel svm = new StudentViewModel();
                 svm.InsertStudentInfo(student);
 
-                ViewBag.Message = "Student Details are saved successfully.";
+                //ViewBag.Message = "Student Details are saved successfully.";
+                TempData["Message"] = "Student Details are saved successfully.";
 
-                return PartialView("~/Views/Shared/PartialPages/Message.cshtml");
+
+                //return PartialView("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
+                return RedirectToAction("Index", "Home");
             }
 
-            return PartialView(student);
+            return View(student);
         }
 
         [HttpGet]

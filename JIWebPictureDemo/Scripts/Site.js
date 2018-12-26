@@ -1,6 +1,8 @@
-﻿function ChangePicture() {
+﻿// On Clicking Student Logo Image, then change the image
+function ChangePicture() {
     $('#upload').click();
 }
+
 function ReadURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -10,3 +12,8 @@ function ReadURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+$(function () {
+    // Show Model Dialog Box
+    $('#successErrorModel').modal('show');
+});

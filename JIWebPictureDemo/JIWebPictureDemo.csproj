@@ -93,8 +93,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\cross.png" />
-    <Content Include="Images\tick.png" />
     <Content Include="Images\loader.gif" />
+    <Content Include="Images\tick.png" />
+    <Content Include="Images\loader2.gif" />
     <Content Include="Images\loader1.gif" />
     <Content Include="Images\not-available.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -136,6 +137,7 @@
     <Content Include="Views\Shared\EditorTemplates\CountyComboBox.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\GenderComboBox.cshtml" />
     <Content Include="Views\Shared\PartialPages\Message.cshtml" />
+    <Content Include="Views\Shared\PartialPages\SuccessDialogBox.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

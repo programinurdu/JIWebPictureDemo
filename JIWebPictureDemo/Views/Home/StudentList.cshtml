@@ -27,7 +27,7 @@
         </tr>
     </thead>
 @foreach (var item in Model) {
-    <tr>
+    <tr ondblclick="RedirectToEdit(@item.StudentId)">
         <td>
             @Html.DisplayFor(modelItem => item.StudentId)
         </td>

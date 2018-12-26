@@ -175,9 +175,13 @@
 
 <br />
 <div id="successmsg">
-    @{
-        Html.RenderPartial("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
-     }
+    @*@if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissable">
+            @TempData["Message"]
+            <a href="#" class="close" data-dismiss="alert">x</a>
+        </div>
+    }*@
 </div>
 
 <div id="progress" class="modal">

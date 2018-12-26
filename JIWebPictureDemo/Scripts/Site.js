@@ -17,3 +17,7 @@ $(function () {
     // Show Model Dialog Box
     $('#successErrorModel').modal('show');
 });
+
+function RedirectToEdit(s) {
+    //location.href = '@Url.Action("Edit", "Home", new {id = '
+}

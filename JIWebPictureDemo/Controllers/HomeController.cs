@@ -38,7 +38,8 @@ namespace JIWebPictureDemo.Controllers
 
 
                 //return PartialView("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
-                return RedirectToAction("Index", "Home");
+                //return RedirectToAction("Index", "Home");
+                return PartialView("~/Home/Index.cshtml", student);
             }
 
             return View(student);

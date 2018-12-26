@@ -24,7 +24,7 @@
 {
     OnSuccess = "OnSuccess",
     OnFailure = "OnFailure",
-    OnBegin="OnBegin",
+    OnBegin = "OnBegin",
     UpdateTargetId = "successmsg",
     LoadingElementId = "progress"
 }, new { enctype = "multipart/form-data" }))
@@ -65,7 +65,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             @Html.LabelFor(model => model.StudentId, htmlAttributes: new { @class = "control-label" })
-                            @Html.EditorFor(model => model.StudentId, new { htmlAttributes = new { @class = "form-control", @readonly= "readonly", @style = "max-width: 15%" } })
+                            @Html.EditorFor(model => model.StudentId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "max-width: 15%;" } })
                             @Html.ValidationMessageFor(model => model.StudentId, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -174,7 +174,11 @@
 }
 
 <br />
-<div id="successmsg"></div>
+<div id="successmsg">
+    @{
+        Html.RenderPartial("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
+     }
+</div>
 
 <div id="progress" class="modal">
     <div class="center">

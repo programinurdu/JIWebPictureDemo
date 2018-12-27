@@ -18,7 +18,6 @@
     }
 </script>
 
-
 @*@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
 @using (Ajax.BeginForm("Index", "Home", FormMethod.Post, new AjaxOptions
 {
@@ -26,7 +25,8 @@
     OnFailure = "OnFailure",
     OnBegin = "OnBegin",
     UpdateTargetId = "successmsg",
-    LoadingElementId = "progress"
+    LoadingElementId = "progress",
+    LoadingElementDuration = 1000
 }, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -175,13 +175,13 @@
 
 <br />
 <div id="successmsg">
-    @*@if (TempData["Message"] != null)
+    @if (TempData["Message"] != null)
     {
         <div class="alert alert-success alert-dismissable">
             @TempData["Message"]
             <a href="#" class="close" data-dismiss="alert">x</a>
         </div>
-    }*@
+    }
 </div>
 
 <div id="progress" class="modal">

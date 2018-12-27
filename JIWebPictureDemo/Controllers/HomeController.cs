@@ -36,12 +36,7 @@ namespace JIWebPictureDemo.Controllers
                 //ViewBag.Message = "Student Details are saved successfully.";
                 TempData["Message"] = "Student Details are saved successfully.";
 
-
                 //return PartialView("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
-                //return RedirectToAction("Edit", "Home", new { id = student.StudentId });
-                //return PartialView("~/Home/Index.cshtml", student);
-                //return Response.Redirect()
-                //return JavaScript("location.reload(true)");
                 return JavaScript("window.location = '" + Url.Action("Edit", "Home", new { id = student.StudentId }) + "'");
             }
 
@@ -54,7 +49,6 @@ namespace JIWebPictureDemo.Controllers
             StudentViewModel svm = new StudentViewModel();
             Student student = svm.GetStudentDetailsByStudentId(id);
 
-            //return Response.Redirect("~/Home/Index/" + id);
             return View("~/Views/Home/Index.cshtml", student);
         }
 

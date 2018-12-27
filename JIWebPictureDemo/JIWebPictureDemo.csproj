@@ -116,12 +116,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\General\AppSetting.cs" />
     <Compile Include="Models\General\SystemEnums.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Test\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Students\ComboBoxData.cs" />
     <Compile Include="ViewModels\Students\StudentViewModel.cs" />
@@ -138,6 +140,7 @@
     <Content Include="Views\Shared\EditorTemplates\GenderComboBox.cshtml" />
     <Content Include="Views\Shared\PartialPages\Message.cshtml" />
     <Content Include="Views\Shared\PartialPages\SuccessDialogBox.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

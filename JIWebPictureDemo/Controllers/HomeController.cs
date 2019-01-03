@@ -1,5 +1,7 @@
 ﻿using JIWebPictureDemo.Models;
+using JIWebPictureDemo.Models.General;
 using JIWebPictureDemo.ViewModels.Students;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,7 @@ namespace JIWebPictureDemo.Controllers
             {
                 StudentId = svm.GenerateStudentId()
             };
+
             return View(student);
         }
 
@@ -30,11 +33,20 @@ namespace JIWebPictureDemo.Controllers
                     file.InputStream.Read(student.Photo, 0, file.ContentLength);
                 }
 
-                StudentViewModel svm = new StudentViewModel();
-                svm.InsertStudentInfo(student);
+                if (student.StudentType == (int)StudentType.Insert)
+                {
+                    StudentViewModel svm = new StudentViewModel();
+                    svm.InsertStudentInfo(student);
 
-                //ViewBag.Message = "Student Details are saved successfully.";
-                TempData["Message"] = "Student Details are saved successfully.";
+                    ViewBag.Message = "Student Details are saved successfully.";
+                }
+                else
+                {
+                    StudentViewModel svm = new StudentViewModel();
+                    svm.UpdateStudentInfo(student);
+
+                    ViewBag.Message = "Student Details are saved successfully.";
+                }
 
                 //return PartialView("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
                 return JavaScript("window.location = '" + Url.Action("Edit", "Home", new { id = student.StudentId }) + "'");
@@ -49,33 +61,10 @@ namespace JIWebPictureDemo.Controllers
             StudentViewModel svm = new StudentViewModel();
             Student student = svm.GetStudentDetailsByStudentId(id);
 
+            // Initialise Student Type, in this case it is update so 1 or Update.
+            student.StudentType = (int)StudentType.Update;
+
             return View("~/Views/Home/Index.cshtml", student);
-        }
-
-        [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Edit(Student student, HttpPostedFileBase file)
-        {
-            if (ModelState.IsValid)
-            {
-                if (file != null && file.ContentLength > 0)
-                {
-                    student.Photo = new byte[file.ContentLength];
-                    file.InputStream.Read(student.Photo, 0, file.ContentLength);
-                }
-
-                StudentViewModel svm = new StudentViewModel();
-                svm.UpdateStudentInfo(student);
-
-                //ViewBag.Message = "Student Details are saved successfully.";
-                TempData["Message"] = "Student Details are updated successfully.";
-
-
-                //return PartialView("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
-                //return RedirectToAction("Edit", "Home");
-                //return PartialView("~/Home/Index.cshtml", student);
-            }
-
-            return View(student);
         }
 
         [HttpGet]

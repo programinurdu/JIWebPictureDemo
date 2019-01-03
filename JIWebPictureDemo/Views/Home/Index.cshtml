@@ -25,8 +25,7 @@
     OnFailure = "OnFailure",
     OnBegin = "OnBegin",
     UpdateTargetId = "successmsg",
-    LoadingElementId = "progress",
-    LoadingElementDuration = 1000
+    LoadingElementId = "progress"
 }, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -62,14 +61,23 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group">
                             @Html.LabelFor(model => model.StudentId, htmlAttributes: new { @class = "control-label" })
-                            @Html.EditorFor(model => model.StudentId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "max-width: 15%;" } })
+                            @Html.EditorFor(model => model.StudentId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "max-width: 35%;" } })
                             @Html.ValidationMessageFor(model => model.StudentId, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
+                    <!-- hidden -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.StudentType, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label" })
@@ -175,10 +183,10 @@
 
 <br />
 <div id="successmsg">
-    @if (TempData["Message"] != null)
+    @if (ViewBag.Message  != null)
     {
         <div class="alert alert-success alert-dismissable">
-            @TempData["Message"]
+            @ViewBag.Message
             <a href="#" class="close" data-dismiss="alert">x</a>
         </div>
     }

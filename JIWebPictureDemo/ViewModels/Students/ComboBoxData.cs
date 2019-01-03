@@ -1,13 +1,14 @@
 ﻿using JIWebPictureDemo.Models.General;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace JIWebPictureDemo.ViewModels.Students
 {
     public class ComboBoxData
     {
-        public static List<SelectListItem> GetListData(ListType listType)
+        public static SelectList GetListData(ListType listType)
         {
             List<SelectListItem> list = new List<SelectListItem>();
 
@@ -24,16 +25,20 @@ namespace JIWebPictureDemo.ViewModels.Students
 
                     while (reader.Read())
                     {
-                        SelectListItem sli = new SelectListItem();
-                        sli.Text = reader["Text"].ToString();
-                        sli.Value = reader["Value"].ToString();
+                        SelectListItem sli = new SelectListItem
+                        {
+                            Text = reader["Description"].ToString(),
+                            Value = reader["Id"].ToString()
+                        };
 
                         list.Add(sli);
                     }
                 }
             }
 
-            return list;
+            SelectList selectList = new SelectList(list.AsEnumerable(), "Value", "Text");
+
+            return selectList;
 
         }
     }

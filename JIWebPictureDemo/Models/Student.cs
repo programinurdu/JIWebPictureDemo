@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace JIWebPictureDemo.Models
 {
@@ -8,6 +9,10 @@ namespace JIWebPictureDemo.Models
 
         [Display(Name = "Student Id:")]
         public int StudentId { get; set; }
+
+        // Zero (0) for new and One (1) for update
+        [HiddenInput(DisplayValue = false)]
+        public int StudentType { get; set; }
 
         [Display(Name = "Full Name:")]
         [Required(ErrorMessage = "Full Name is required.")]

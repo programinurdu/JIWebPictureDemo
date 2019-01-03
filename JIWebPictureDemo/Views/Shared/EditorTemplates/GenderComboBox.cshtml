@@ -1,4 +1,4 @@
 ﻿@using JIWebPictureDemo.ViewModels.Students
 @using JIWebPictureDemo.Models.General
 
-@Html.DropDownList("", (List<SelectListItem>)ComboBoxData.GetListData(ListType.Gender), string.Empty, new { @class = "form-control" })
+@Html.DropDownList("", new SelectList(ComboBoxData.GetListData(ListType.Gender), "Value", "Text"), string.Empty, new { @class = "form-control" })

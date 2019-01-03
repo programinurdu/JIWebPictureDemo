@@ -3,6 +3,7 @@ using JIWebPictureDemo.Models.General;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Web.Mvc;
 
 namespace JIWebPictureDemo.ViewModels.Students
 {

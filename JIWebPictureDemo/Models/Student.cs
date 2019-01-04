@@ -36,11 +36,11 @@ namespace JIWebPictureDemo.Models
 
         [Display(Name = "City:")]
         [UIHint("CityComboBox")]
-        public int? City { get; set; }
+        public string City { get; set; }
 
         [Display(Name = "County:")]
         [UIHint("CountyComboBox")]
-        public int? County { get; set; }
+        public string County { get; set; }
 
         [Display(Name = "Post Code:")]
         public string PostCode { get; set; }

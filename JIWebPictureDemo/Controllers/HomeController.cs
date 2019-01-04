@@ -45,7 +45,7 @@ namespace JIWebPictureDemo.Controllers
                     StudentViewModel svm = new StudentViewModel();
                     svm.UpdateStudentInfo(student);
 
-                    ViewBag.Message = "Student Details are saved successfully.";
+                    ViewBag.Message = "Student Details are updated successfully.";
                 }
 
                 //return PartialView("~/Views/Shared/PartialPages/SuccessDialogBox.cshtml");
@@ -63,6 +63,8 @@ namespace JIWebPictureDemo.Controllers
 
             // Initialise Student Type, in this case it is update so 1 or Update.
             student.StudentType = (int)StudentType.Update;
+            ViewBag.City = student.City;
+            ViewBag.County = student.County;
 
             return View("~/Views/Home/Index.cshtml", student);
         }

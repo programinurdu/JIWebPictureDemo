@@ -134,6 +134,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PracticeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,6 +142,7 @@
     <Compile Include="Models\General\SystemEnums.cs" />
     <Compile Include="Models\ListModel.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Test\PersonTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Students\ComboBoxData.cs" />
     <Compile Include="ViewModels\Students\StudentViewModel.cs" />
@@ -158,6 +160,7 @@
     <Content Include="Views\Shared\PartialPages\Message.cshtml" />
     <Content Include="Views\Shared\PartialPages\SuccessDialogBox.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Practice\DropDownListTest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -28,7 +28,7 @@ namespace JIWebPictureDemo.ViewModels.Students
                         SelectListItem sli = new SelectListItem
                         {
                             Text = reader["Description"].ToString(),
-                            Value = reader["Id"].ToString()
+                            Value = reader["Id"].ToString(),
                         };
 
                         list.Add(sli);

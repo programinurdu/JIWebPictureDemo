@@ -1,5 +1,6 @@
 ﻿@using JIWebPictureDemo.ViewModels.Students
 @using JIWebPictureDemo.Models.General
 
-@Html.DropDownList("", new SelectList(ComboBoxData.GetListData(ListType.County), "Value", "Text"), string.Empty, new { @class = "form-control" })
+@Html.DropDownList("", new SelectList(ComboBoxData.GetListData(ListType.County), "Value", "Text", ViewBag.County), string.Empty, new { @class = "form-control" })
+
 

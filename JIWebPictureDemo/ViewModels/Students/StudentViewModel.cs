@@ -81,8 +81,8 @@ namespace JIWebPictureDemo.ViewModels.Students
                     //student.Photo = reader["Photo"];
                     student.Address1 = reader["Address1"].ToString();
                     student.Address2 = reader["Address2"].ToString();
-                    student.City = Convert.ToInt32(reader["City"]);
-                    student.County = Convert.ToInt32(reader["County"]);
+                    student.City = reader["City"].ToString();
+                    student.County = reader["County"].ToString();
                     student.PostCode = reader["PostCode"].ToString();
                     student.Notes = reader["Notes"].ToString();
                 }

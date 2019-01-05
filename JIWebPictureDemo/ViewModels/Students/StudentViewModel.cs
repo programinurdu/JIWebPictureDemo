@@ -41,15 +41,15 @@ namespace JIWebPictureDemo.ViewModels.Students
                     cmd.Parameters.AddWithValue("@StudentId", student.StudentId);
                     cmd.Parameters.AddWithValue("@FullName", student.FullName);
                     cmd.Parameters.AddWithValue("@Email", student.Email);
-                    cmd.Parameters.AddWithValue("@Mobile", student.Mobile);
-                    cmd.Parameters.AddWithValue("@Telephone", student.Telephone);
-                    cmd.Parameters.AddWithValue("@Address1", student.Address1);
-                    cmd.Parameters.AddWithValue("@Address2", student.Address2);
-                    cmd.Parameters.AddWithValue("@City", student.City);
-                    cmd.Parameters.AddWithValue("@County", student.County);
-                    cmd.Parameters.AddWithValue("@PostCode", student.PostCode);
+                    cmd.Parameters.AddWithValue("@Mobile", student.Mobile ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Telephone", student.Telephone ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Address1", student.Address1 ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Address2", student.Address2 ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@City", student.City ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@County", student.County ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@PostCode", student.PostCode ?? string.Empty);
                     cmd.Parameters.AddWithValue("@Photo", student.Photo);
-                    cmd.Parameters.AddWithValue("@Notes", student.Notes);
+                    cmd.Parameters.AddWithValue("@Notes", student.Notes ?? string.Empty);
                     
 
                     cmd.ExecuteNonQuery();
@@ -76,15 +76,15 @@ namespace JIWebPictureDemo.ViewModels.Students
                     student.StudentId = Convert.ToInt32(reader["StudentId"]);
                     student.FullName = reader["FullName"].ToString();
                     student.Email = reader["Email"].ToString();
-                    student.Mobile = reader["Mobile"].ToString();
-                    student.Telephone = reader["Telephone"].ToString();
+                    student.Mobile = (reader["Mobile"] is DBNull) ? string.Empty :reader["Mobile"].ToString();
+                    student.Telephone = (reader["Telephone"] is DBNull) ? string.Empty : reader["Telephone"].ToString();
                     //student.Photo = reader["Photo"];
-                    student.Address1 = reader["Address1"].ToString();
-                    student.Address2 = reader["Address2"].ToString();
-                    student.City = reader["City"].ToString();
-                    student.County = reader["County"].ToString();
-                    student.PostCode = reader["PostCode"].ToString();
-                    student.Notes = reader["Notes"].ToString();
+                    student.Address1 = (reader["Address1"] is DBNull) ? string.Empty : reader["Address1"].ToString();
+                    student.Address2 = (reader["Address2"] is DBNull) ? string.Empty : reader["Address2"].ToString();
+                    student.City = (reader["City"] is DBNull) ? string.Empty : reader["City"].ToString();
+                    student.County = (reader["County"] is DBNull) ? string.Empty : reader["County"].ToString();
+                    student.PostCode = (reader["PostCode"] is DBNull) ? string.Empty : reader["PostCode"].ToString();
+                    student.Notes = (reader["Notes"] is DBNull) ? string.Empty : reader["Notes"].ToString();
                 }
             }
 
@@ -104,15 +104,15 @@ namespace JIWebPictureDemo.ViewModels.Students
                     cmd.Parameters.AddWithValue("@StudentId", student.StudentId);
                     cmd.Parameters.AddWithValue("@FullName", student.FullName);
                     cmd.Parameters.AddWithValue("@Email", student.Email);
-                    cmd.Parameters.AddWithValue("@Mobile", student.Mobile);
-                    cmd.Parameters.AddWithValue("@Telephone", student.Telephone);
-                    cmd.Parameters.AddWithValue("@Address1", student.Address1);
-                    cmd.Parameters.AddWithValue("@Address2", student.Address2);
-                    cmd.Parameters.AddWithValue("@City", student.City);
-                    cmd.Parameters.AddWithValue("@County", student.County);
-                    cmd.Parameters.AddWithValue("@PostCode", student.PostCode);
+                    cmd.Parameters.AddWithValue("@Mobile", student.Mobile ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Telephone", student.Telephone ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Address1", student.Address1 ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@Address2", student.Address2 ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@City", student.City ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@County", student.County ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@PostCode", student.PostCode ?? string.Empty);
                     cmd.Parameters.AddWithValue("@Photo", student.Photo);
-                    cmd.Parameters.AddWithValue("@Notes", student.Notes);
+                    cmd.Parameters.AddWithValue("@Notes", student.Notes ?? string.Empty);
 
 
                     cmd.ExecuteNonQuery();
